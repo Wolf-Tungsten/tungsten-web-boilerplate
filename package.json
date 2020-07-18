@@ -1,12 +1,17 @@
 {
   "scripts": {
-    "dev": "./node_modules/.bin/parcel serve ./public/index.html"
+    "dev": "parcel ./public/index.html"
   },
   "devDependencies": {
-    "parcel": "^2.0.0-beta.1"
+    "@babel/core": "^7.10.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-plugin-import": "^1.13.0",
+    "less": "^3.12.2",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.9.7"
   },
   "dependencies": {
-    "@types/antd": "^1.0.0",
+    "@types/react": "^16.9.43",
     "antd": "^4.4.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

@@ -2,10 +2,10 @@ import * as React from 'react';
 import './style.less';
 import { Button } from 'antd';
 
-export default function Home(props) {
+export default function Home() {
     return (
         <div>
-            <Button> Hello tungsten </Button>
+            <Button type="primary"> Hello tungsten </Button>
         </div>
     )
 }
