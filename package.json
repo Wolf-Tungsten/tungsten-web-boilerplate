@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "dev": "./node_modules/.bin/parcel serve ./public/index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0-beta.1"
+  },
+  "dependencies": {
+    "@types/antd": "^1.0.0",
+    "antd": "^4.4.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0"
+  }
+}
