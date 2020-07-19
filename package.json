@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "parcel ./public/index.html"
+    "dev": "parcel ./public/index.html --public-url /template/ --hmr-hostname seicwxbz.seu.edu.cn --hmr-port 18080 --port 8080",
+    "build": "parcel build ./public/index.html --public-url /template/"
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",

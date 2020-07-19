@@ -7,7 +7,6 @@ export default function Login() {
     const dispatch = useDispatch()
 
     const login = () => {
-        console.log('点击登录了')
         dispatch({ type: 'login', payload: 'fake_token' })
     }
 
