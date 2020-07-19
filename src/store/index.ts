@@ -7,7 +7,7 @@ export interface StoreState {
     isLogin: boolean;
     apiToken?: string;
     hasUnfinishedRoute: boolean;
-    unfinishedRoute?: any;
+    unfinishedRoute?: string;
 }
 
 const initialState: StoreState = {
@@ -24,6 +24,16 @@ const actions: Actions = {
   logout(state) {
     state.isLogin = false;
     state.apiToken = undefined;
+    return state;
+  },
+  saveUnfinishedRoute(state, payload) {
+    state.hasUnfinishedRoute = true;
+    state.unfinishedRoute = payload;
+    return state;
+  },
+  clearUnfinishedRoute(state) {
+    state.hasUnfinishedRoute = false;
+    state.unfinishedRoute = undefined;
     return state;
   },
 };
