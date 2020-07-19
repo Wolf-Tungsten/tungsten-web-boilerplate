@@ -1,6 +1,7 @@
+/* eslint-disable no-param-reassign */
 import { createStore } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 export interface StoreState {
     isLogin: boolean;
@@ -9,45 +10,43 @@ export interface StoreState {
     unfinishedRoute?: any;
 }
 
-const initialState:StoreState = {
-    isLogin: false,
-    hasUnfinishedRoute: false
-}
+const initialState: StoreState = {
+  isLogin: false,
+  hasUnfinishedRoute: false,
+};
 
-const actions:Actions = {
-    login(state, payload){
-        state.isLogin = true
-        state.apiToken = payload
-        return state
-    }, 
-    logout(state){
-        state.isLogin = false
-        state.apiToken = undefined
-        return state
-    }
-}
+const actions: Actions = {
+  login(state, payload) {
+    state.isLogin = true;
+    state.apiToken = payload;
+    return state;
+  },
+  logout(state) {
+    state.isLogin = false;
+    state.apiToken = undefined;
+    return state;
+  },
+};
 
-const reducer = (state:StoreState = initialState, action:Action) => {
-    if(typeof actions[action.type] === "function"){
-        let newState = JSON.parse(JSON.stringify(state))
-        return actions[action.type](newState, action.payload)
-    }
-    return initialState
-}
+const reducer = (state: StoreState = initialState, action: Action) => {
+  if (typeof actions[action.type] === 'function') {
+    const newState = JSON.parse(JSON.stringify(state));
+    return actions[action.type](newState, action.payload);
+  }
+  return initialState;
+};
 
 const persistedReducer = persistReducer({
-    key: 'tungsten-redux',
-    storage,
-}, reducer)
+  key: 'tungsten-redux',
+  storage,
+}, reducer);
 
-const store = createStore(persistedReducer)
-const persistor = persistStore(store)
+const store = createStore(persistedReducer);
+const persistor = persistStore(store);
 
-export { store, persistor }
+export { store, persistor };
 
-interface ActionFunc {
-    (state:StoreState, payload?: any): StoreState;
-}
+type ActionFunc = (state: StoreState, payload?: any) => StoreState;
 
 interface Action {
     type: string;
