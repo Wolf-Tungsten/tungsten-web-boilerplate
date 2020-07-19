@@ -13,7 +13,7 @@
 在应用的顶层，整个组件树已经使用 React-Redux 提供的 `Provider` 进行了包装。
 同时，Redux 存储使用 LocalStorage 持久化，并使用 `PersistGate` 包装了组件树。
 
-```
+```tsx
 const Main:React.FC = () => {
     return (
         <Provider store={store}>
@@ -28,7 +28,7 @@ const Main:React.FC = () => {
 ### 获取 Store 中的数据
 
 使用 `useSelector` 访问 Store 中的数据：
-```
+```tsx
 import React from 'react'
 import { useSelector } from 'react-redux'
 
@@ -38,7 +38,7 @@ export const CounterComponent = () => {
 }
 ```
 
-```
+```tsx
 import React from 'react'
 import { useSelector } from 'react-redux'
 
@@ -50,7 +50,7 @@ export const TodoListItem = props => {
 
 ### dispatch 数据修改
 
-```
+```tsx
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
@@ -68,7 +68,7 @@ export const CounterComponent = ({ value }) => {
 }
 ```
 
-```
+```tsx
 import React, { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 
