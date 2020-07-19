@@ -1,12 +1,12 @@
-# tungsten-web-template
-使用React（Hooks）、Redux、React-Router、Typescript、Parcel构建的前端项目模板。
+# tungsten-web-boilerplate
+使用React、Redux、React-Router、Typescript、Parcel搭建的前端项目模板。
 
 ## 开始使用
 
 建议使用 `yarn` 作为包管理工具。
-修改 `package.json` 中的 `scripts`，假设项目最终部署 URL 为 `https://seicwxbz.seu.edu.cn/template/`，则 `dev` 脚本修改为：
+修改 `package.json` 中的 `scripts`，假设项目最终部署 URL 为 `https://seicwxbz.seu.edu.cn/boilerplate/`，则 `dev` 脚本修改为：
 ```
-parcel ./public/index.html --public-url /template/ --hmr-hostname seicwxbz.seu.edu.cn --hmr-port 18080 --port 8080
+parcel ./public/index.html --public-url /boilerplate/ --hmr-hostname seicwxbz.seu.edu.cn --hmr-port 18080 --port 8080
 ```
 进入项目目录，依次执行以下命令：
 ```bash
@@ -15,10 +15,13 @@ yarn start
 ```
 whistle 代理规则配置如下：
 ```
-/^https:\/\/seicwxbz\.seu\.edu\.cn\/template\/(.*)/ http://localhost:8080/template/$1
+/^https:\/\/seicwxbz\.seu\.edu\.cn\/boilerplate\/(.*)/ http://localhost:8080/boilerplate/$1
 /^wss:\/\/seicwxbz\.seu\.edu\.cn:18080\/(.*)/ localhost:18080/$1
 ```
-然后即可在浏览器中访问`https://seicwxbz.seu.edu.cn/template/`进行调试。
+然后即可在浏览器中访问`https://seicwxbz.seu.edu.cn/boilerplate/`进行调试。
+
+## React Hook
+
 
 ## Redux 的使用
 
