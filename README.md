@@ -22,6 +22,7 @@ whistle 代理规则配置如下：
 
 ## React Hook
 
+真的很有趣，模板中的例子都是使用 Hook API 的。什么？你不知道什么是 Hook API？那看看这里吧：https://zh-hans.reactjs.org/docs/hooks-intro.html
 
 ## Redux 的使用
 
