@@ -5,12 +5,16 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react'
 import { RootRouter } from './router'
 import './style/main.less'
+import AuthGuard from './component/AuthGuard'
+import Login from './page/Login'
 
 const Main:React.FC = () => {
     return (
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-                <RootRouter />
+                <AuthGuard beforeLogin={<Login/>}>
+                    <RootRouter />
+                </AuthGuard>
             </PersistGate>
         </Provider>
     )

@@ -2,28 +2,14 @@ import { createStore } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
-interface State {
+export interface StoreState {
     isLogin: boolean;
     apiToken?: string;
     hasUnfinishedRoute: boolean;
     unfinishedRoute?: any;
 }
 
-interface ActionFunc {
-    (state:State, payload?: any): void;
-}
-
-interface Action {
-    type: string;
-    payload?: any;
-}
-
-interface Actions {
-    [propName: string]: ActionFunc;
-}
-
-
-const initialState:State = {
+const initialState:StoreState = {
     isLogin: false,
     hasUnfinishedRoute: false
 }
@@ -33,10 +19,15 @@ const actions:Actions = {
         state.isLogin = true
         state.apiToken = payload
         return state
+    }, 
+    logout(state){
+        state.isLogin = false
+        state.apiToken = undefined
+        return state
     }
 }
 
-const reducer = function (state:State = initialState, action:Action){
+const reducer = (state:StoreState = initialState, action:Action) => {
     if(typeof actions[action.type] === "function"){
         let newState = JSON.parse(JSON.stringify(state))
         return actions[action.type](newState, action.payload)
@@ -54,4 +45,16 @@ const persistor = persistStore(store)
 
 export { store, persistor }
 
+interface ActionFunc {
+    (state:StoreState, payload?: any): StoreState;
+}
+
+interface Action {
+    type: string;
+    payload?: any;
+}
+
+interface Actions {
+    [propName: string]: ActionFunc;
+}
 
