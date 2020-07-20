@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { StoreState } from '../store';
+import { StoreState, persistor } from '../store';
 import * as qs from 'querystring';
 
 type Props = {
@@ -14,7 +14,7 @@ const simulateCASAuth = (ticket: string) => (new Promise((resolve, reject) => {
 }));
 
 const launchCASAuth = () => {
-  window.location.href = `https://newids.seu.edu.cn/authserver/login?goto=${encodeURIComponent('https://seicwxbz.seu.edu.cn/template/')}`;
+  window.location.href = `https://newids.seu.edu.cn/authserver/login?goto=${encodeURIComponent('https://seicwxbz.seu.edu.cn/boilerplate/')}`;
 };
 
 const AuthGuard: React.FC<Props> = ({ children, history, beforeLogin }: Props) => {
@@ -35,14 +35,14 @@ const AuthGuard: React.FC<Props> = ({ children, history, beforeLogin }: Props) =
         } else {
           // 保存当前路由
           dispatch({ type: 'saveUnfinishedRoute', payload: route });
+          await persistor.flush();
           launchCASAuth();
         }
       } else {
         if (hasUnfinishedRoute) {
-          console.log('访问未完成的路由');
           // 完成未完成的路由
           dispatch({ type: 'clearUnfinishedRoute' });
-          console.log(unfinishedRoute);
+          await persistor.flush();
           window.location.href = unfinishedRoute as string;
         }
       }
