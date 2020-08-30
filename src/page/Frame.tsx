@@ -60,6 +60,7 @@ const DesktopFrame = (props: { children: any }) => {
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'top -120px right -200px',
             padding: '24px',
+            minHeight: '500px',
           }}>
             {props.children}
           </div>
