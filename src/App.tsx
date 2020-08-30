@@ -7,18 +7,21 @@ import RootRouter from './router';
 import './style/main.less';
 import AuthGuard from './component/AuthGuard';
 import Login from './page/Login';
+import zhCN from 'antd/es/locale/zh_CN';
+import { ConfigProvider } from 'antd';
+import './App.less';
+const version = 2;
 
-const Main: React.FC = () => (
+const App: React.FC = () => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <AuthGuard beforeLogin={<Login/>}>
-        <RootRouter />
-      </AuthGuard>
+      <ConfigProvider locale={zhCN}>
+        <AuthGuard beforeLogin={<Login/>}>
+          <RootRouter />
+        </AuthGuard>
+      </ConfigProvider>
     </PersistGate>
   </Provider>
 );
 
-ReactDOM.render(
-  <Main/>,
-  document.getElementById('main')
-);
+export default App;

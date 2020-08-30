@@ -129,20 +129,20 @@
         "ignoredNodes": [
           // "JSXElement",
           // "JSXElement > *",
-          "JSXAttribute",
-          "JSXIdentifier",
-          "JSXNamespacedName",
-          "JSXMemberExpression",
-          "JSXSpreadAttribute",
-          "JSXExpressionContainer",
+          // "JSXAttribute",
+          // "JSXIdentifier",
+          // "JSXNamespacedName",
+          // "JSXMemberExpression",
+          // "JSXSpreadAttribute",
+          // "JSXExpressionContainer",
           // "JSXOpeningElement",
           // "JSXClosingElement",
-          "JSXFragment",
-          "JSXOpeningFragment",
-          "JSXClosingFragment",
-          "JSXText",
-          "JSXEmptyExpression",
-          "JSXSpreadChild"
+          // "JSXFragment",
+          // "JSXOpeningFragment",
+          // "JSXClosingFragment",
+          // "JSXText",
+          // "JSXEmptyExpression",
+          // "JSXSpreadChild"
         ],
         "ignoreComments": false
       }

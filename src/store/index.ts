@@ -4,15 +4,17 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 export interface StoreState {
-    isLogin: boolean;
-    apiToken?: string;
-    hasUnfinishedRoute: boolean;
-    unfinishedRoute?: string;
+  isLogin: boolean;
+  apiToken?: string;
+  user?: {
+    cardnum: string;
+    name: string;
+    isAdmin: boolean;
+  }
 }
 
 const initialState: StoreState = {
   isLogin: false,
-  hasUnfinishedRoute: false,
 };
 
 const actions: Actions = {
@@ -24,16 +26,11 @@ const actions: Actions = {
   logout(state) {
     state.isLogin = false;
     state.apiToken = undefined;
+    state.user = undefined;
     return state;
   },
-  saveUnfinishedRoute(state, payload) {
-    state.hasUnfinishedRoute = true;
-    state.unfinishedRoute = payload;
-    return state;
-  },
-  clearUnfinishedRoute(state) {
-    state.hasUnfinishedRoute = false;
-    state.unfinishedRoute = undefined;
+  user(state, payload) {
+    state.user = payload;
     return state;
   },
 };
