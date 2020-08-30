@@ -1,28 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Typography,
-  Button,
-  Space,
-  Form,
-  Select,
   Input,
-  Tag,
-  message,
-  Table,
-  Radio,
-  Spin,
-  Modal,
-  Pagination,
-  PageHeader,
-  AutoComplete,
 } from 'antd';
-import { PlusCircleOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router';
-import moment from 'moment';
-import { useApi } from '../../util/api';
-import logo from '../../../asset/logoWithText.png';
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph } = Typography;
 
 const Page1 = () => {
   // useState 示例

@@ -45,12 +45,7 @@ const DesktopFrame = (props: { children: any }) => {
                 </Menu.Item>
               </Menu.SubMenu>
               <Menu.SubMenu icon={<SettingOutlined />} disabled={true} key="page-3" title="页面3">
-                <Menu.Item key="page-3-1" >
-                  <Link to="/desktop/page-3-1">页面3-1</Link>
-                </Menu.Item>
-                <Menu.Item key="page-3-2" >
-                  <Link to="/desktop/page-3-2">页面3-2</Link>
-                </Menu.Item>
+                <Link to="/desktop/page-3">页面3</Link>
               </Menu.SubMenu>
             </Menu>
             <div style={{ flexGrow: 1 }}></div>
@@ -70,7 +65,7 @@ const DesktopFrame = (props: { children: any }) => {
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>
-          Copyright © 2020 All Rights Reserved | 狼剩子x东南大学网络与信息中心
+          Copyright © 2020 All Rights Reserved | 每天想念基哥的狼剩子
         </Footer>
       </Layout>
     </>

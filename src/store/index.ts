@@ -10,11 +10,13 @@ export interface StoreState {
     cardnum: string;
     name: string;
     isAdmin: boolean;
-  }
+  },
+  example: string;
 }
 
 const initialState: StoreState = {
   isLogin: false,
+  example: '修改这里的文本，然后刷新试试',
 };
 
 const actions: Actions = {
@@ -31,6 +33,10 @@ const actions: Actions = {
   },
   user(state, payload) {
     state.user = payload;
+    return state;
+  },
+  changeExample(state, payload) {
+    state.example = payload;
     return state;
   },
 };
