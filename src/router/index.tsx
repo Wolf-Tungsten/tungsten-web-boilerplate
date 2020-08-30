@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { HashRouter, Route, Switch, useHistory } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import DesktopRouter from './desktop';
 import MobileRouter from './mobile';
 import { useSelector } from 'react-redux';

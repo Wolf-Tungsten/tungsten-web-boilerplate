@@ -8,7 +8,6 @@ import { useHistory } from 'react-router';
 const { Title, Paragraph } = Typography;
 
 const Page3 = (props: {match: {params: {payload: string}}}) => {
-  // 读取 Redux 中的值
   const history = useHistory();
 
   return (

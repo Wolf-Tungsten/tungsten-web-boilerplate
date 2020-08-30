@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import React, { useState } from 'react';
-import { Layout, Menu, Tabs, Space, Row, Col } from 'antd';
-import { StoreState } from '../store';
+import { Layout, Menu, Row, Col } from 'antd';
+// import { StoreState } from '../store';
 import logo from '../asset/logo.png';
 import logoNoSeu from '../asset/logo-no-seu.png';
 import BackgroundLogo from '../asset/bg-logo.png';
@@ -13,7 +13,7 @@ import {
   HistoryOutlined,
   AppstoreOutlined,
 } from '@ant-design/icons';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 const { Header, Footer, Content } = Layout;
 
@@ -31,7 +31,7 @@ const DesktopFrame = (props: { children: any }) => {
       <Layout style={{ minHeight: '100vh' }}>
         <Header>
           <div style={{ display: 'flex', height: '100%', alignItems: 'center' }}>
-            <img src={logo} style={{ height: '90%' }} />
+            <img src={logo} style={{ height: '90%' }} alt="网站logo"/>
             <Menu theme="dark" mode="horizontal" defaultSelectedKeys="page-1">
               <Menu.Item disabled={false} icon={<CommentOutlined />} key="page-1">
                 <Link to="/desktop/page-1">页面1</Link>
@@ -75,7 +75,7 @@ const DesktopFrame = (props: { children: any }) => {
 
 const MobileFrame = (props: { children: any }) => {
   const dispatch = useDispatch();
-  const { user } = useSelector((state: StoreState) => state);
+  // const { user } = useSelector((state: StoreState) => state);
   const [select, setSelect] = useState('tab-1');
   const logout = () => {
     dispatch({ type: 'logout' });
@@ -97,7 +97,7 @@ const MobileFrame = (props: { children: any }) => {
           <div
             style={{ display: 'flex', height: '100%', alignItems: 'center' }}
           >
-            <img src={logoNoSeu} style={{ height: '40%' }} />
+            <img src={logoNoSeu} style={{ height: '40%' }} alt="网站logo"/>
             <div style={{ flexGrow: 1 }}></div>
             <LogoutOutlined
               onClick={logout}
@@ -106,7 +106,7 @@ const MobileFrame = (props: { children: any }) => {
           </div>
         </Header>
         <div style={{
-          padding: '50px 0 50px 0',
+          padding: '70px 0 50px 0',
           background: '#f0f2f5',
           minHeight: '100vh',
           backgroundImage: `url(${BackgroundLogo})`,
@@ -125,7 +125,7 @@ const MobileFrame = (props: { children: any }) => {
             </Col>
           </Row>
         </div>
-        {user?.isAdmin ? <Footer style={{
+        {true ? <Footer style={{
           backgroundColor: '#fff',
           height: '50px',
           position: 'fixed',
@@ -142,7 +142,7 @@ const MobileFrame = (props: { children: any }) => {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                color: select === 'tab-1' ? 'teal' : '#111',
+                color: select === 'tab-1' ? '#FAAD14' : '#111',
               }}
             >
               <HistoryOutlined style={{ fontSize: '20px' }} />
@@ -156,7 +156,7 @@ const MobileFrame = (props: { children: any }) => {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                color: select === 'tab-2' ? 'teal' : '#111',
+                color: select === 'tab-2' ? '#FAAD14' : '#111',
               }}
             >
               <AppstoreOutlined style={{ fontSize: '20px' }} />

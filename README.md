@@ -1,5 +1,14 @@
-# tungsten-web-boilerplate
-使用React、Redux、React-Router、Typescript、Parcel搭建的前端项目模板。
+# 狼剩子的前端模板项目
+使用React、Redux、React-Router、Typescript搭建的前端项目模板。
+
+## 请先安装好 Whistle 并配置如下规则
+
+```
+/^https:\/\/seicwxbz\.seu\.edu\.cn\/boilerplate\/(.*)/ http://localhost:8080/boilerplate/$1
+/^wss:\/\/seicwxbz\.seu\.edu\.cn:8080\/(.*)/ ws://localhost:8080/$1
+# 如果需要本地后端则正确配置下述内容
+# /^https:\/\/seicwxbz\.seu\.edu\.cn\/boilerplate-api\/(.*)/ http://localhost:3000/$1
+```
 
 ## Available Scripts
 
@@ -8,7 +17,7 @@ In the project directory, you can run:
 ### `yarn start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [https://seicwxbz.seu.edu.cn/boilerplate/](https://seicwxbz.seu.edu.cn/boilerplate/) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
@@ -44,14 +53,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-## Whistle 代理设置
-
-```
-/^https:\/\/seicwxbz\.seu\.edu\.cn\/meeting\/(.*)/ http://localhost:8080/meeting/$1
-/^wss:\/\/seicwxbz\.seu\.edu\.cn:8080\/(.*)/ ws://localhost:8080/$1
-# 如果需要本地后端则取消下一行注释
-# /^https:\/\/seicwxbz\.seu\.edu\.cn\/meeting-api\/(.*)/ http://localhost:3000/$1
-```
 
 ## React Hook
 

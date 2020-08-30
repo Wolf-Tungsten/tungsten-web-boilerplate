@@ -20,18 +20,18 @@ const launchAuth = () => {
   }
 };
 
-const serviceValidate = async (ticket: string) => {
-  const service = 'https://seicwxbz.seu.edu.cn/boilerplate/';
-  const res = await api.post('/auth', {
-    ticket,
-    service,
-    platform: isWeixin ? 'wechat-web' : 'web',
-  });
-  if (res.data.success) {
-    return res.data.result;
-  }
-  alert(res.data.reason);
-};
+// const serviceValidate = async (ticket: string) => {
+//   const service = 'https://seicwxbz.seu.edu.cn/boilerplate/';
+//   const res = await api.post('/auth', {
+//     ticket,
+//     service,
+//     platform: isWeixin ? 'wechat-web' : 'web',
+//   });
+//   if (res.data.success) {
+//     return res.data.result;
+//   }
+//   alert(res.data.reason);
+// };
 
 const AuthGuard: React.FC<Props> = ({ children, history, beforeLogin }: Props) => {
   // 获取登录状态

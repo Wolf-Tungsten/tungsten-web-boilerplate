@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { HashRouter, Route, Switch, useRouteMatch } from 'react-router-dom';
 import { DesktopFrame } from '../page/Frame';
-import { StoreState } from '../store';
-import { useSelector } from 'react-redux';
 import Page1 from '../page/desktop/Page1';
 import { Page2Sub1, Page2Sub2 } from '../page/desktop/Page2';
 import Page3 from '../page/desktop/Page3';
 
 const DesktopRouter = function () {
   const match = useRouteMatch();
-  const { user } = useSelector((state: StoreState) => state);
+  // const { user } = useSelector((state: StoreState) => state);
   return (
     <DesktopFrame>
       <HashRouter>

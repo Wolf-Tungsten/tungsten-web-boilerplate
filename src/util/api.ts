@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
-import { StoreState, persistor } from '../store';
+import { useSelector } from 'react-redux';
+import { StoreState } from '../store';
 
 // 给认证环节用的
 export const api = axios.create({
